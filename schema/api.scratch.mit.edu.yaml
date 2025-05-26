@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Scratch API
+  version: 1.0.0
+  description: API for Scratch platform
+servers:
+  - url: https://api.scratch.mit.edu
+    description: Main Scratch API server
+paths:
+  /:
+    get:
+      summary: Responses API info
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  website:
+                    type: string
+                  api:
+                    type: string
+                  help:
+                    type: string
+                required:
+                  - website
+                  - api
+                  - help
+components:
+  schemas: {}
