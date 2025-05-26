@@ -7,4 +7,7 @@ await Promise.all(['api.scratch.mit.edu'].map(build))
 
 await toSSG(app, fs, {
   dir: 'dist',
+  extensionMap: {
+    'text/plain': 'yaml',
+  }
 })
