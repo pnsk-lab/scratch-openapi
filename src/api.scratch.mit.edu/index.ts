@@ -24,6 +24,7 @@ export default typiaToOpenAPI({
 						content: {
 							'application/json': {
 								schema: typia.json.schema<{
+									/** a url of main website */
 									website: string
 									api: string
 									/** @default help@scratch.mit.edu */
