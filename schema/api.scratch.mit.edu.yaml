@@ -20,6 +20,7 @@ paths:
                 properties:
                   website:
                     type: string
+                    description: a url of main website
                   api:
                     type: string
                   help:
