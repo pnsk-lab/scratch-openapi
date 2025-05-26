@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -37,6 +37,15 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - run: bun i
       - run: BASE_URL=/scratch-openapi bun scripts/build.ts
+      - run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name "Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "build schema"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
