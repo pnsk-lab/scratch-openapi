@@ -20,11 +20,7 @@ paths:
           name: id
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the project to update.
       requestBody:
         required: true
@@ -51,11 +47,7 @@ paths:
           name: id
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the project.
       responses:
         "200":
@@ -73,29 +65,17 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of projects to return.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
       responses:
         "200":
@@ -115,29 +95,17 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of projects to return.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
       responses:
         "200":
@@ -157,29 +125,17 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of projects to return.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
       responses:
         "200":
@@ -199,29 +155,17 @@ paths:
           name: classroomId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the classroom.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of projects to return.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
       responses:
         "200":
@@ -241,39 +185,23 @@ paths:
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the project.
         - in: path
           name: parentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the parent comment.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of replies to return.
       responses:
         "200":
@@ -293,29 +221,17 @@ paths:
           name: id
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the project.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of comments to return.
       responses:
         "200":
@@ -335,21 +251,13 @@ paths:
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the project the comment belongs to.
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the comment to retrieve.
       responses:
         "200":
@@ -367,20 +275,12 @@ paths:
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment deleted successfully.
@@ -395,20 +295,12 @@ paths:
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment reported successfully.
@@ -423,20 +315,12 @@ paths:
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment restored successfully.
@@ -451,36 +335,20 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: parentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of comment reply objects.
@@ -499,27 +367,15 @@ paths:
           name: id
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of top-level comment objects.
@@ -538,20 +394,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: A single comment object.
@@ -568,20 +416,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment deleted successfully.
@@ -596,20 +436,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment reported successfully.
@@ -624,20 +456,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: commentId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Comment restored successfully.
@@ -652,27 +476,15 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of studio manager objects.
@@ -691,27 +503,15 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of studio curator objects.
@@ -731,35 +531,23 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: newHostName
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  password:
-                    type: string
-                required:
-                  - password
+              type: object
+              properties:
+                password:
+                  type: string
+              required:
+                - password
       responses:
         "200":
           description: Studio host transferred successfully.
@@ -776,27 +564,15 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: dateLimit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: An array of studio activity objects.
@@ -814,11 +590,7 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Studio details.
@@ -836,20 +608,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: User's role details in the studio.
@@ -866,11 +630,7 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Classroom details associated with the studio.
@@ -888,57 +648,33 @@ paths:
           name: itemType
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              oneOf:
-                - const: projects
-                - const: studios
+            oneOf:
+              - const: projects
+              - const: studios
           description: The type of items to search for.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: language
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
         - in: query
           name: mode
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              oneOf:
-                - const: trending
-                - const: popular
-                - const: recent
+            oneOf:
+              - const: trending
+              - const: popular
+              - const: recent
         - in: query
           name: q
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: An array of search result objects (projects or studios).
@@ -958,19 +694,11 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of activity objects.
@@ -1001,11 +729,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: An array of project objects.
@@ -1024,11 +748,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: An array of project objects.
@@ -1048,11 +768,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: An array of project objects.
@@ -1071,11 +787,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: Username check status message.
@@ -1097,16 +809,12 @@ paths:
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  password:
-                    type: string
-                required:
-                  - password
+              type: object
+              properties:
+                password:
+                  type: string
+              required:
+                - password
       responses:
         "200":
           description: Password strength status message.
@@ -1128,11 +836,7 @@ paths:
           name: email
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
       responses:
         "200":
           description: Email availability status message.
@@ -1157,27 +861,15 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: An array of project objects in the studio.
@@ -1196,20 +888,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Project added to studio successfully.
@@ -1241,20 +925,12 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
         - in: path
           name: projectId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
       responses:
         "200":
           description: Project removed from studio.
@@ -1352,6 +1028,14 @@ components:
         - history
         - stats
         - remix
+    ProjectUpdateRequestBody:
+      type: object
+      properties:
+        instructions:
+          type: string
+        notesAndCredits:
+          type: string
+      required: []
     Comment:
       type: object
       properties:
@@ -1525,14 +1209,6 @@ components:
           required: []
       required:
         - id
-    ProjectUpdateRequestBody:
-      type: object
-      properties:
-        instructions:
-          type: string
-        notesAndCredits:
-          type: string
-      required: []
     FeaturedContentResponse:
       type: object
       properties:

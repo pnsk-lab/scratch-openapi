@@ -19,23 +19,7 @@ paths:
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas:
-                  LoginRequestBody:
-                    type: object
-                    properties:
-                      username:
-                        type: string
-                      password:
-                        type: string
-                      useMessages:
-                        type: boolean
-                    required:
-                      - username
-                      - password
-              schema:
-                $ref: "#/components/schemas/LoginRequestBody"
+              $ref: "#/components/schemas/LoginRequestBody"
       responses:
         "200":
           description: Login successful, redirect, or error message.
@@ -57,16 +41,12 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  csrfmiddlewaretoken:
-                    type: string
-                required:
-                  - csrfmiddlewaretoken
+              type: object
+              properties:
+                csrfmiddlewaretoken:
+                  type: string
+              required:
+                - csrfmiddlewaretoken
       responses:
         "302":
           description: Redirect after logout.
@@ -95,23 +75,7 @@ paths:
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas:
-                  DeleteAdminMessageRequestBody:
-                    type: object
-                    properties:
-                      alertType:
-                        oneOf:
-                          - const: invite
-                          - const: notification
-                      alertId:
-                        type: number
-                    required:
-                      - alertType
-                      - alertId
-              schema:
-                $ref: "#/components/schemas/DeleteAdminMessageRequestBody"
+              $ref: "#/components/schemas/DeleteAdminMessageRequestBody"
       responses:
         "200":
           description: Admin message deleted successfully.
@@ -133,53 +97,33 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of messages to return.
         - in: query
           name: offset
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Offset for pagination.
         - in: query
           name: filter
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              oneOf:
-                - const: ""
-                - const: all
-                - const: comments
-                - const: projects
-                - const: studios
-                - const: forums
+            oneOf:
+              - const: ""
+              - const: all
+              - const: comments
+              - const: projects
+              - const: studios
+              - const: forums
           description: Filter messages by type.
         - in: query
           name: language
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: Preferred language for messages.
       responses:
         "200":
@@ -199,11 +143,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
       responses:
         "200":
@@ -223,11 +163,7 @@ paths:
           name: username
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user.
       responses:
         "200":
@@ -245,28 +181,20 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio to update.
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  title:
-                    type: string
-                  description:
-                    type: string
-                required: []
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+              required: []
       responses:
         "200":
           description: Studio updated successfully.
@@ -287,27 +215,19 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio whose thumbnail is to be updated.
       requestBody:
         required: true
         content:
           multipart/form-data:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  file:
-                    type: string
-                required:
-                  - file
+              type: object
+              properties:
+                file:
+                  type: string
+              required:
+                - file
       responses:
         "200":
           description: Studio image updated successfully.
@@ -328,21 +248,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio to follow.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user to add as a follower.
       responses:
         "200":
@@ -358,21 +270,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio to unfollow.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user to remove as a follower.
       responses:
         "200":
@@ -388,11 +292,7 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
       responses:
         "200":
@@ -408,11 +308,7 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
       responses:
         "200":
@@ -429,11 +325,7 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
       responses:
         "200":
@@ -449,21 +341,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user to remove.
       responses:
         "200":
@@ -479,21 +363,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user to invite.
       responses:
         "200":
@@ -515,21 +391,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the curator to promote.
       responses:
         "200":
@@ -547,21 +415,13 @@ paths:
           name: studioId
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: The ID of the studio.
         - in: query
           name: usernames
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The username of the user accepting the invite.
       responses:
         "200":
@@ -576,11 +436,7 @@ paths:
         - in: query
           name: limit
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: number
+            type: number
           description: Maximum number of news posts to return.
       responses:
         "200":
@@ -617,19 +473,15 @@ paths:
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas: {}
-              schema:
-                type: object
-                properties:
-                  cue:
-                    type: string
-                  value:
-                    type: boolean
-                required:
-                  - cue
-                  - value
+              type: object
+              properties:
+                cue:
+                  type: string
+                value:
+                  type: boolean
+              required:
+                - cue
+                - value
       responses:
         "200":
           description: Template cue set successfully.
@@ -654,11 +506,7 @@ paths:
           name: classroomToken
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              type: string
+            type: string
           description: The unique token for the classroom.
       responses:
         "200":
@@ -678,69 +526,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              version: "3.1"
-              components:
-                schemas:
-                  RegistrationRequest:
-                    type: object
-                    properties:
-                      username:
-                        type: string
-                      password:
-                        type: string
-                      birth_month:
-                        type: string
-                      birth_year:
-                        type: string
-                      gender:
-                        type: string
-                      country:
-                        type: string
-                      is_robot:
-                        type: boolean
-                      g-recaptcha-response:
-                        type: string
-                      email:
-                        type: string
-                      first_name:
-                        type: string
-                      last_name:
-                        type: string
-                      phone_number:
-                        type: string
-                      organization_name:
-                        type: string
-                      organization_title:
-                        type: string
-                      organization_type:
-                        type: string
-                      organization_other:
-                        type: string
-                      organization_url:
-                        type: string
-                      address_country:
-                        type: string
-                      address_line1:
-                        type: string
-                      address_line2:
-                        type: string
-                      address_city:
-                        type: string
-                      address_state:
-                        type: string
-                      address_zip:
-                        type: string
-                      how_use_scratch:
-                        type: string
-                      classroom_id:
-                        type: number
-                      classroom_token:
-                        type: string
-                      subscribe:
-                        type: boolean
-                    required: []
-              schema:
-                $ref: "#/components/schemas/RegistrationRequest"
+              $ref: "#/components/schemas/RegistrationRequest"
       responses:
         "200":
           description: Student registration status.
@@ -760,69 +546,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              version: "3.1"
-              components:
-                schemas:
-                  RegistrationRequest:
-                    type: object
-                    properties:
-                      username:
-                        type: string
-                      password:
-                        type: string
-                      birth_month:
-                        type: string
-                      birth_year:
-                        type: string
-                      gender:
-                        type: string
-                      country:
-                        type: string
-                      is_robot:
-                        type: boolean
-                      g-recaptcha-response:
-                        type: string
-                      email:
-                        type: string
-                      first_name:
-                        type: string
-                      last_name:
-                        type: string
-                      phone_number:
-                        type: string
-                      organization_name:
-                        type: string
-                      organization_title:
-                        type: string
-                      organization_type:
-                        type: string
-                      organization_other:
-                        type: string
-                      organization_url:
-                        type: string
-                      address_country:
-                        type: string
-                      address_line1:
-                        type: string
-                      address_line2:
-                        type: string
-                      address_city:
-                        type: string
-                      address_state:
-                        type: string
-                      address_zip:
-                        type: string
-                      how_use_scratch:
-                        type: string
-                      classroom_id:
-                        type: number
-                      classroom_token:
-                        type: string
-                      subscribe:
-                        type: boolean
-                    required: []
-              schema:
-                $ref: "#/components/schemas/RegistrationRequest"
+              $ref: "#/components/schemas/RegistrationRequest"
       responses:
         "200":
           description: Student registration update status.
@@ -843,13 +567,9 @@ paths:
           name: path
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              oneOf:
-                - const: version.xml
-                - const: pt-br/version.xml
+            oneOf:
+              - const: version.xml
+              - const: pt-br/version.xml
           description: Path to the version XML file.
       responses:
         "200":
@@ -869,14 +589,10 @@ paths:
           name: playlistKey
           required: true
           schema:
-            version: "3.1"
-            components:
-              schemas: {}
-            schema:
-              oneOf:
-                - const: sprites-and-vectors
-                - const: tips-and-tricks
-                - const: advanced-topics
+            oneOf:
+              - const: sprites-and-vectors
+              - const: tips-and-tricks
+              - const: advanced-topics
           description: Identifier for the YouTube playlist.
       responses:
         "200":
@@ -889,6 +605,18 @@ paths:
                   $ref: "#/components/schemas/YoutubeVideoData"
 components:
   schemas:
+    LoginRequestBody:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        useMessages:
+          type: boolean
+      required:
+        - username
+        - password
     SuccessResponse.o1:
       type: object
       properties:
@@ -921,6 +649,18 @@ components:
         type: array
         items:
           type: string
+    DeleteAdminMessageRequestBody:
+      type: object
+      properties:
+        alertType:
+          oneOf:
+            - const: invite
+            - const: notification
+        alertId:
+          type: number
+      required:
+        - alertType
+        - alertId
     UserMessage:
       type: object
       properties:
@@ -1114,6 +854,64 @@ components:
           required: []
       required:
         - id
+    RegistrationRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        birth_month:
+          type: string
+        birth_year:
+          type: string
+        gender:
+          type: string
+        country:
+          type: string
+        is_robot:
+          type: boolean
+        g-recaptcha-response:
+          type: string
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        phone_number:
+          type: string
+        organization_name:
+          type: string
+        organization_title:
+          type: string
+        organization_type:
+          type: string
+        organization_other:
+          type: string
+        organization_url:
+          type: string
+        address_country:
+          type: string
+        address_line1:
+          type: string
+        address_line2:
+          type: string
+        address_city:
+          type: string
+        address_state:
+          type: string
+        address_zip:
+          type: string
+        how_use_scratch:
+          type: string
+        classroom_id:
+          type: number
+        classroom_token:
+          type: string
+        subscribe:
+          type: boolean
+      required: []
     RegistrationResponse.o1:
       type: object
       properties:
