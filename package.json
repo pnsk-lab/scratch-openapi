@@ -4,7 +4,9 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"fmt": "biome check --write"
+		"fmt": "biome check --write",
+		"build": "bun ./scripts/build.ts",
+		"dev": "bun --watch ./scripts/dev.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",

@@ -1,30 +1,26 @@
-import { Hono } from "hono";
-import { serveStatic } from "hono/bun";
-import { absolutePath } from "swagger-ui-dist";
-import * as path from "node:path";
-import { startBuilder } from "./builder";
-import { html } from "hono/html";
+import * as path from 'node:path'
+import { Hono } from 'hono'
+import { serveStatic } from 'hono/bun'
+import { html, raw } from 'hono/html'
+import { absolutePath } from 'swagger-ui-dist'
+import { startBuilder } from './builder'
+import { getSchemIDs as getSchemaIDs } from './shared'
 
 if (import.meta.main) {
-  startBuilder();
+	startBuilder()
 }
-const app = new Hono();
+const app = new Hono()
 
-const APIS = [
-  "api.scratch.mit.edu",
-];
+const APIS = await getSchemaIDs()
 
 for (const api of APIS) {
-  app.get(`/${api}.yaml`, async (c) => {
-    return c.body(
-      await Bun.file(path.join("./schema", `${api}.yaml`)).text(),
-    );
-  });
+	app.get(`/${api}.yaml`, async (c) => {
+		return c.body(await Bun.file(path.join('./schema', `${api}.yaml`)).text())
+	})
 }
 
-
-app.get("/", (c) =>
-  c.html(html`
+app.get('/', async (c) =>
+	c.html(html`
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -50,9 +46,14 @@ app.get("/", (c) =>
         window.onload = function() {
             // Swagger UI のインスタンスを生成
             const ui = SwaggerUIBundle({
-                urls: [
-                  { url: '${process.env.BASE_URL ?? ''}/api.scratch.mit.edu.yaml', name: 'api.scratch.mit.edu' },
-                ],
+                urls: ${raw(
+									JSON.stringify(
+										(await getSchemaIDs()).map((id) => ({
+											url: `${process.env.BASE_URL ?? ''}/${id}.yaml`,
+											name: id,
+										})),
+									),
+								)},
                 layout: "StandaloneLayout",
                 dom_id: '#swagger-ui', // Swagger UI を表示する要素のID
                 deepLinking: true, // URLのハッシュで状態を共有できるようにする
@@ -69,6 +70,7 @@ app.get("/", (c) =>
         </script>
       </body>
     </html>
-  `));
+  `),
+)
 
-export default app;
+export default app

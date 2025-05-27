@@ -1,13 +1,14 @@
-import { build } from './builder.ts'
-import { toSSG } from 'hono/ssg'
-import app from './dev.ts'
 import * as fs from 'node:fs/promises'
+import { toSSG } from 'hono/ssg'
+import { build } from './builder.ts'
+import app from './dev.ts'
+import { getSchemIDs } from './shared.ts'
 
-await Promise.all(['api.scratch.mit.edu'].map(build))
+await Promise.all((await getSchemIDs()).map(build))
 
 await toSSG(app, fs, {
-  dir: 'dist',
-  extensionMap: {
-    'text/plain': 'yaml',
-  }
+	dir: 'dist',
+	extensionMap: {
+		'text/plain': 'yaml',
+	},
 })
