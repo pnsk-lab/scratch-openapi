@@ -16,10 +16,10 @@
         "@biomejs/biome": "^1.9.4",
         "@types/bun": "latest",
         "@types/swagger-ui-dist": "^3.30.5",
-        "@typescript/native-preview": "^7.0.0-dev.20250526.1",
+        "@typescript/native-preview": "^7.0.0-dev.20250527.1",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5.8.3",
       },
     },
   },

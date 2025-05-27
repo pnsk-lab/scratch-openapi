@@ -8,8 +8,6 @@ info:
 servers:
   - url: https://api.scratch.mit.edu
     description: Production Scratch API server
-  - url: https://projects.scratch.mit.edu
-    description: CDN for project assets
 paths:
   /projects/{id}:
     put:
@@ -27,19 +25,7 @@ paths:
         content:
           application/json:
             schema:
-              version: "3.1"
-              components:
-                schemas:
-                  ProjectUpdateRequestBody:
-                    type: object
-                    properties:
-                      instructions:
-                        type: string
-                      notesAndCredits:
-                        type: string
-                    required: []
-              schema:
-                $ref: "#/components/schemas/ProjectUpdateRequestBody"
+              $ref: "#/components/schemas/ProjectUpdateRequestBody"
       responses:
         "200":
           description: Project updated successfully.
