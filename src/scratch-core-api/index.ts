@@ -158,12 +158,6 @@ export default typiaToOpenAPI({
 			url: 'https://api.scratch.mit.edu',
 			description: 'Production Scratch API server',
 		},
-		// Although projects.scratch.mit.edu is a CDN, it's explicitly mentioned in the context of project assets,
-		// so including it for completeness in the server list.
-		{
-			url: 'https://projects.scratch.mit.edu',
-			description: 'CDN for project assets',
-		},
 	],
 	paths: {
 		'/projects/{id}': {
