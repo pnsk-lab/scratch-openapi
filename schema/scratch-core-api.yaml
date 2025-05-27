@@ -27,7 +27,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ProjectUpdateRequestBody"
+              version: "3.1"
+              components:
+                schemas:
+                  ProjectUpdateRequestBody:
+                    type: object
+                    properties:
+                      instructions:
+                        type: string
+                      notesAndCredits:
+                        type: string
+                    required: []
+              schema:
+                $ref: "#/components/schemas/ProjectUpdateRequestBody"
       responses:
         "200":
           description: Project updated successfully.
